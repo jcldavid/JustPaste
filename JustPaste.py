@@ -26,7 +26,7 @@ class JustpasteCommand(sublime_plugin.TextCommand):
     		return content
 
 	def check(self,response, i='.'):
-		self.view.set_status('pls', '[JustPaste.Me] Processing'+i)
+		sublime.status_message( '[JustPaste.Me] Processing'+i)
 		if(response.isAlive()):
 			if(i == '...'):
 				i = ''
@@ -37,7 +37,7 @@ class JustpasteCommand(sublime_plugin.TextCommand):
 			sublime.error_message("Can't submit to JustPaste")
 		else:
 			sublime.set_clipboard(response.result)
-    		    	self.view.set_status('pls',"[JustPaste.Me] URL has been copied to clipboard")
+    		    	sublime.status_message("[JustPaste.Me] URL has been copied to clipboard")
 
 
 class JustPasteApiCall(threading.Thread):
@@ -48,7 +48,7 @@ class JustPasteApiCall(threading.Thread):
 
 	def run(self):
 		try:
-	    		req = urllib2.Request('http://justpate.me/api', self.params)
+	    		req = urllib2.Request('http://justpaste.me/api', self.params)
 	    		response = urllib2.urlopen(req)
 	    		self.result = response.read()
     		except (urllib2.HTTPError) as (e):

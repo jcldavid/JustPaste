@@ -16,7 +16,7 @@
 
 Go to `Preferences > Key Bindings - User` and add the following line:
 
-  { "keys": ["ctrl+shift+j"], "command": "justpaste" }
+    { "keys": ["ctrl+shift+j"], "command": "justpaste" }
 
-Change `ctrl+shift+j` with the key combination you want to bind the plugin with
+Change `ctrl+shift+j` with the key combination you want to bind the plugin with.
 

@@ -4,7 +4,7 @@
 
 ## Installation
 
-1. Download the plugin and extract it to your **Packages** Directory
+1. [Download the plugin](https://github.com/Apathetic012/JustPaste/zipball/master) and extract it to your **Packages** Directory
 
 ## Usage
 

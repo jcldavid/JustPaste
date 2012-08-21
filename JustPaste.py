@@ -48,7 +48,7 @@ class JustPasteApiCall(threading.Thread):
 
 	def run(self):
 		try:
-	    		req = urllib2.Request('http://paste.dev/api', self.params)
+	    		req = urllib2.Request('http://justpate.me/api', self.params)
 	    		response = urllib2.urlopen(req)
 	    		self.result = response.read()
     		except (urllib2.HTTPError) as (e):

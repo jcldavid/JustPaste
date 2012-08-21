@@ -32,9 +32,8 @@ class JustpasteCommand(sublime_plugin.TextCommand):
 				i = ''
 			sublime.set_timeout(lambda: self.check(response,i+'.'), 150)
 			return;
-		self.view.erase_status('pls')
 		if response.result == False:
-			sublime.error_message("Can't submit to JustPaste")
+			sublime.error_message("Can't submit to JustPaste.Me")
 		else:
 			sublime.set_clipboard(response.result)
     		    	sublime.status_message("[JustPaste.Me] URL has been copied to clipboard")

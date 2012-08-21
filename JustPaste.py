@@ -3,8 +3,6 @@ import sublime_plugin
 import urllib
 import urllib2
 import threading
-import time
-import pprint
 
 class JustpasteCommand(sublime_plugin.TextCommand):
 

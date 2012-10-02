@@ -11,10 +11,16 @@
 ## Usage
 
 - Highlight a code or go to the file you want to upload its code
+
 - Either `right click > Upload to JustPaste` or use the plugin-default keyboard shortcut `F1` to upload:
    - a snippet of highlighted code
    - the current file
+
+![](http://i.imgur.com/womux.png)
+
 - Link will be automatically copied to your clipboard
+
+![](http://i.imgur.com/SUonN.png)
 
 ### Change keyboard shortcut
 

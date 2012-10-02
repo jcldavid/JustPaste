@@ -4,6 +4,8 @@
 
 ## Installation
 
+1. Via [**Package Control**](http://wbond.net/sublime_packages/package_control): Press <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>p</kbd> and Search for the package `Just Paste`.
+
 1. [Download the plugin](https://github.com/downloads/Apathetic012/JustPaste/JustPaste%20v1.0.zip) and extract it to your **Packages** Directory
 
 ## Usage

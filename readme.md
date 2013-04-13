@@ -6,17 +6,19 @@
 
 1. Via [**Package Control**](http://wbond.net/sublime_packages/package_control): Press <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>p</kbd> and Search for the package `Just Paste`.
 
-1. [Download the plugin](https://github.com/downloads/Apathetic012/JustPaste/JustPaste%20v1.0.zip) and extract it to your **Packages** Directory
+1. [Download the plugin](https://github.com/Apathetic012/JustPaste/archive/v2.0.0.zip) and extract it to your **Packages** Directory
 
 ## Usage
 
 - Highlight a code or go to the file you want to upload its code
 
-- Either `right click > Upload to JustPaste` or use the plugin-default keyboard shortcut `F1` to upload:
+- Either `right click > Submit Paste` or use the plugin-default keyboard shortcut `F1` to upload:
    - a snippet of highlighted code
    - the current file
 
-![](http://i.imgur.com/womux.png)
+![](http://i.imgur.com/cKYyndl.png)
+
+- Select which syntax to use
 
 - Link will be automatically copied to your clipboard
 
@@ -26,7 +28,4 @@
 
 Go to `Preferences > Key Bindings - User` and add the following line:
 
-    { "keys": ["ctrl+shift+j"], "command": "justpaste" }
-
-Change `ctrl+shift+j` with the key combination you want to bind the plugin with.
-
+    { "keys": ["KEYBINDING"], "command": "submit_paste" }

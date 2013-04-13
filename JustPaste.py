@@ -5,7 +5,7 @@ import requests
 class SubmitPasteCommand(sublime_plugin.WindowCommand):
   def run(self):
     self.languages = [
-      'Augeas', 'dasm16', 'Puppet', 'Delphi', 'JavaScript+Mako',
+      'Text only', 'Augeas', 'dasm16', 'Puppet', 'Delphi', 'JavaScript+Mako',
       'Elixir iex session', 'PostgreSQL console (psql)', 'Brainfuck', 'Ceylon',
       'JavaScript+Django/Jinja', 'HTML+Evoque', 'NumPy', 'Modula-2',
       'LiveScript', 'Nimrod', 'Bash', 'HTML+Django/Jinja', 'CSS+PHP',
@@ -50,7 +50,7 @@ class SubmitPasteCommand(sublime_plugin.WindowCommand):
       'CSS+Lasso', 'XML+PHP', 'Stan', 'INI', 'MOOCode', 'Shell Session',
       'RPMSpec', 'Newspeak', 'Bash Session', 'Coq', 'Raw token data', 'Tcsh',
       'HTML+Lasso', 'C#', 'Gosu Template', 'RConsole', 'MXML', 'TeX',
-      'CSS+Smarty', 'Text only', 'ANTLR With C# Target', 'OpenEdge ABL',
+      'CSS+Smarty', 'ANTLR With C# Target', 'OpenEdge ABL',
       'Cheetah', 'Smali', 'CSS+Myghty', 'Rd', 'LLVM', 'Standard ML', 'Elixir',
       'Nginx configuration file', 'GoodData-CL', 'AppleScript', 'HTML+Smarty',
       'Objective-C', 'JavaScript', 'Rust', 'Common Lisp', 'Embedded Ragel',

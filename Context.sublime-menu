@@ -1,6 +1,6 @@
 [
 {
-    "command": "justpaste",
-    "caption": "Upload to JustPaste"
+    "command": "submit_paste",
+    "caption": "Submit Paste"
 }
 ]

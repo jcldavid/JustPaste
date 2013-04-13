@@ -1,6 +1,6 @@
 [
     {
-        "caption": "JustPaste - Upload File/Highlighted Region",
-        "command": "justpaste"
+        "caption": "JustPaste - Submit File Content/Highlighted Region",
+        "command": "submit_paste"
     }
 ]

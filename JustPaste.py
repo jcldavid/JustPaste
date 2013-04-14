@@ -4,61 +4,60 @@ import requests
 
 class SubmitPasteCommand(sublime_plugin.WindowCommand):
   def run(self):
-    self.languages = [
-      'Text only', 'Augeas', 'dasm16', 'Puppet', 'Delphi', 'JavaScript+Mako',
-      'Elixir iex session', 'PostgreSQL console (psql)', 'Brainfuck', 'Ceylon',
-      'JavaScript+Django/Jinja', 'HTML+Evoque', 'NumPy', 'Modula-2',
-      'LiveScript', 'Nimrod', 'Bash', 'HTML+Django/Jinja', 'CSS+PHP',
-      'XML+Lasso', 'VimL', 'CSS+Genshi Text', 'Fancy', 'Coldfusion HTML',
-      'cfstatement', 'Scalate Server Page', 'Smarty', 'XML+Evoque', 'haXe',
-      'PowerShell', 'Tea', 'HTML+Cheetah', 'Redcode', 'Ruby irb session',
-      'Mason', 'Django/Jinja', 'JAGS', 'ApacheConf', 'DTD', 'Dylan session',
-      'Lighttpd configuration file', 'Java', 'JavaScript+Genshi Text',
-      'Scheme', 'Nemerle', 'RHTML', 'Ragel in Java Host', 'Darcs Patch',
-      'Octave', 'CoffeeScript', 'Ragel in D Host', 'Scilab', 'Monkey',
-      'HTML+Myghty', 'Erlang erl session', 'CSS', 'JavaScript+Smarty',
-      'Io', 'COBOLFree', 'Asymptote', 'vhdl', 'Python 3', 'CSS+Ruby',
-      'Fortran', 'd-objdump', 'MySQL', 'REBOL', 'C++', 'ERB', 'CBM BASIC V2',
-      'Befunge', 'Julia', 'MoonScript', 'Ruby', 'XML+Smarty', 'Dylan', 'Groovy',
-      'MoinMoin/Trac Wiki markup', 'autohotkey', 'C', 'HTML', 'Felix', 'CMake',
-      'NSIS', 'SourcePawn', 'Mako', 'VGL', 'Velocity', 'Koka', 'CUDA',
-      'Gnuplot', 'IRC logs', 'Prolog', 'Python', 'CSS+Django/Jinja', 'verilog',
-      'Smalltalk', 'JavaScript+Myghty', 'YAML',
-      'ANTLR With ActionScript Target', 'XML+Mako', 'XSLT', 'UrbiScript',
-      'Scaml', 'S', 'DylanLID', 'MAQL', 'sqlite3con', 'Boo', 'OCaml', 'eC',
-      'ActionScript', 'VB.net', 'SquidConf', 'XQuery', 'D', 'Fantom',
-      'Gettext Catalog', 'Logos', 'Julia console', 'Lasso', 'SCSS', 'BBCode',
-      'Haml', 'FoxPro', 'Python 3.0 Traceback', 'MuPAD', 'XML+Ruby', 'Dart',
-      'IDL', 'dg', 'Evoque', 'Jade', 'c-objdump', 'Kconfig',
-      'Java Server Page', 'reg', 'ABAP', 'XML+Velocity', 'JavaScript+Cheetah',
-      'HTML+Mako', 'Ragel in Ruby Host', 'RobotFramework', 'Protocol Buffer',
-      'CFEngine3', 'Ragel', 'GLSL', 'COBOL', 'TypeScript', 'Ada',
-      'PostgreSQL SQL dialect', 'Xtend', 'Logtalk', 'objdump', 'TOML',
-      'CSS+Mako', 'ca65', 'Objective-C++', 'Gherkin', 'HTML+PHP', 'Makefile',
-      'PostScript', 'Hxml', 'Kotlin', 'PL/pgSQL', 'Vala', 'Haskell', 'Bro',
-      'Lua', 'POVRay', 'Sass', 'ANTLR With Java Target', 'Tcl',
-      'ANTLR With ObjectiveC Target', 'JavaScript+Ruby', 'Racket', 'AspectJ',
-      'Base Makefile', 'ANTLR With Python Target', 'cpp-objdump',
-      'Genshi Text', 'Ioke', 'PyPy Log', 'Croc', 'Objective-J', 'GAS',
-      'Batchfile', 'Snobol', 'Python console session', 'XML', 'ANTLR', 'Opa',
-      'XML+Cheetah', 'Go', 'Diff', 'MiniD', 'Cython', 'Ragel in C Host',
-      'Erlang', 'Debian Control file', 'aspx-vb', 'BUGS', 'Ragel in CPP Host',
-      'aspx-cs', 'Matlab session', 'Properties', 'Groff', 'Clojure',
-      'Modelica', 'QML', 'JavaScript+Lasso', 'ANTLR With Perl Target',
-      'Genshi', 'BlitzMax', 'Treetop', 'Matlab', 'Myghty', 'HTML+Genshi',
-      'Duel', 'Perl', 'FSharp', 'reStructuredText', 'NewLisp', 'Scala',
-      'CSS+Lasso', 'XML+PHP', 'Stan', 'INI', 'MOOCode', 'Shell Session',
-      'RPMSpec', 'Newspeak', 'Bash Session', 'Coq', 'Raw token data', 'Tcsh',
-      'HTML+Lasso', 'C#', 'Gosu Template', 'RConsole', 'MXML', 'TeX',
-      'CSS+Smarty', 'ANTLR With C# Target', 'OpenEdge ABL',
-      'Cheetah', 'Smali', 'CSS+Myghty', 'Rd', 'LLVM', 'Standard ML', 'Elixir',
-      'Nginx configuration file', 'GoodData-CL', 'AppleScript', 'HTML+Smarty',
-      'Objective-C', 'JavaScript', 'Rust', 'Common Lisp', 'Embedded Ragel',
-      'ActionScript 3', 'systemverilog', 'Literate Haskell',
-      'Python Traceback', 'PHP', 'ANTLR With CPP Target', 'Gosu', 'Hybris',
-      'JavaScript+PHP', 'Factor', 'HTML+Velocity', 'Mscgen', 'Ooc', 'SQL',
-      'HTTP', 'ECL', 'Ragel in Objective C Host', 'XML+Django/Jinja', 'Awk',
-      'JSON', 'NASM', 'ANTLR With Ruby Target', 'XML+Myghty'
+    self.aliases = [
+      'text', 'augeas', 'DASM16', 'puppet', 'iex', 'ceylon', 'html+evoque',
+      'numpy', 'css+php', 'xml+lasso', 'vim', 'cfm', 'cfs', 'ssp',
+      'smarty', 'xml+evoque', 'tea', 'redcode', 'mason', 'jags', 'dtd', 'java',
+      'nemerle', 'ragel-java', 'dpatch', 'octave', 'ragel-d',
+      'scilab', 'monkey', 'html+myghty', 'erl', 'css', 'io', 'cobolfree', 'vhdl',
+      'fortran', 'd-objdump', 'mysql', 'rebol', 'erb', 'cbmbas', 'befunge',
+      'xml+smarty', 'dylan', 'groovy', 'ahk', 'c', 'html', 'cmake', 'sp',
+      'mako', 'vgl', 'velocity', 'koka', 'gnuplot', 'irc', 'prolog', 'yaml',
+      'xml+mako', 'xslt', 'urbiscript', 'maql', 'sqlite3', 'boo', 'ocaml',
+      'ec', 'd', 'fan', 'logos', 'jlcon', 'scss', 'bbcode', 'py3tb', 'mupad',
+      'dart', 'idl', 'dg', 'evoque', 'c-objdump', 'jsp', 'registry', 'abap',
+      'xml+velocity', 'html+mako', 'protobuf', 'ragel', 'glsl', 'cobol', 'ts',
+      'xtend', 'logtalk', 'objdump', 'toml', 'css+mako', 'ca65', 'html+php',
+      'postscript', 'kotlin', 'plpgsql', 'bro', 'lua', 'pov', 'antlr-java', 'tcl',
+      'antlr-objc', 'aspectj', 'basemake', 'antlr-python', 'genshitext', 'croc',
+      'gas', 'bat', 'snobol', 'pycon', 'xml', 'antlr', 'opa', 'go', 'minid',
+      'ragel-c', 'erlang', 'control', 'aspx-vb', 'ragel-cpp', 'aspx-cs',
+      'matlabsession', 'properties', 'modelica', 'antlr-perl', 'treetop', 'matlab',
+      'myghty', 'fsharp', 'newlisp', 'scala', 'css+lasso', 'xml+php', 'stan',
+      'moocode', 'shell-session', 'spec', 'newspeak', 'console', 'coq', 'raw',
+      'html+lasso', 'gst', 'mxml', 'css+smarty', 'smali', 'css+myghty',
+      'rd', 'llvm', 'sml', 'nginx', 'gooddata-cl', 'applescript', 'html+smarty',
+      'rust', 'ragel-em', 'pytb', 'antlr-cpp', 'gosu', 'factor', 'html+velocity',
+      'ooc', 'sql', 'http', 'ecl', 'ragel-objc', 'json', 'nasm', 'xml+myghty'
+    ]
+    self.titles = [
+      'Text only', 'Augeas', 'dasm16', 'Puppet', 'Elixir iex session', 'Ceylon', 'HTML+Evoque',
+      'NumPy', 'CSS+PHP', 'XML+Lasso', 'VimL', 'Coldfusion HTML', 'cfstatement',
+      'Scalate Server Page', 'Smarty', 'XML+Evoque', 'Tea', 'Redcode', 'Mason',
+      'JAGS', 'DTD', 'Java', 'Nemerle', 'Ragel in Java Host', 'Darcs Patch',
+      'Octave', 'Ragel in D Host', 'Scilab', 'Monkey', 'HTML+Myghty', 'Erlang erl session',
+      'CSS', 'Io', 'COBOLFree', 'vhdl', 'Fortran', 'd-objdump', 'MySQL', 'REBOL',
+      'ERB', 'CBM BASIC V2', 'Befunge', 'XML+Smarty', 'Dylan', 'Groovy', 'autohotkey',
+      'C', 'HTML', 'CMake', 'SourcePawn', 'Mako', 'VGL', 'Velocity', 'Koka',
+      'Gnuplot', 'IRC logs', 'Prolog', 'YAML', 'XML+Mako', 'XSLT', 'UrbiScript',
+      'MAQL', 'sqlite3con', 'Boo', 'OCaml', 'eC', 'D', 'Fantom', 'Logos', 'Julia console',
+      'SCSS', 'BBCode', 'Python 3.0 Traceback', 'MuPAD', 'Dart', 'IDL', 'dg', 'Evoque',
+      'c-objdump', 'Java Server Page', 'reg', 'ABAP', 'XML+Velocity', 'HTML+Mako',
+      'Protocol Buffer', 'Ragel', 'GLSL', 'COBOL', 'TypeScript', 'Xtend',
+      'Logtalk', 'objdump', 'TOML', 'CSS+Mako', 'ca65', 'HTML+PHP', 'PostScript',
+      'Kotlin', 'PL/pgSQL', 'Bro', 'Lua', 'POVRay', 'ANTLR With Java Target', 'Tcl',
+      'ANTLR With ObjectiveC Target', 'AspectJ', 'Base Makefile', 'ANTLR With Python Target',
+      'Genshi Text', 'Croc', 'GAS', 'Batchfile', 'Snobol', 'Python console session',
+      'XML', 'ANTLR', 'Opa', 'Go', 'MiniD', 'Ragel in C Host', 'Erlang', 'Debian Control file',
+      'aspx-vb', 'Ragel in CPP Host', 'aspx-cs', 'Matlab session', 'Properties',
+      'Modelica', 'ANTLR With Perl Target', 'Treetop', 'Matlab', 'Myghty', 'FSharp',
+      'NewLisp', 'Scala', 'CSS+Lasso', 'XML+PHP', 'Stan', 'MOOCode', 'Shell Session',
+      'RPMSpec', 'Newspeak', 'Bash Session', 'Coq', 'Raw token data', 'HTML+Lasso',
+      'Gosu Template', 'MXML', 'CSS+Smarty', 'Smali', 'CSS+Myghty', 'Rd',
+      'LLVM', 'Standard ML', 'Nginx configuration file', 'GoodData-CL', 'AppleScript',
+      'HTML+Smarty', 'Rust', 'Embedded Ragel', 'Python Traceback',
+      'ANTLR With CPP Target', 'Gosu', 'Factor', 'HTML+Velocity', 'Ooc', 'SQL',
+      'HTTP', 'ECL', 'Ragel in Objective C Host', 'JSON', 'NASM', 'XML+Myghty'
     ]
 
     self.getContent()
@@ -71,13 +70,13 @@ class SubmitPasteCommand(sublime_plugin.WindowCommand):
       self.content = view.substr(sublime.Region(0, view.size()))
 
   def showPanel(self):
-    self.window.show_quick_panel(self.languages, self.findLang)
+    self.window.show_quick_panel(self.titles, self.findLang)
 
   def findLang(self, pos):
     if pos == -1: return
     params = {
       'content': self.content,
-      'lexer': self.languages[pos]
+      'lexer': self.aliases[pos]
     }
     request = SubmitPasteRequest(params)
     request.start()
